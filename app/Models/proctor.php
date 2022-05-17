@@ -8,7 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class proctor  extends Model
 {
     use HasFactory;
-    protected  $fillablele = ['stu_name','stu_id','dorm_matrial'];
-
+    protected $fillable = [
+        'Block_no',
+        'dorm_no',
+        'dormitary_material',
+        ];
+    
 
 }
