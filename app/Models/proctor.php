@@ -15,7 +15,7 @@ class proctor  extends Model
         'dormitary_material',
         ];
     
-        public function student()
+        public function students()
         {
             return $this->hasmony(student::class);
         }

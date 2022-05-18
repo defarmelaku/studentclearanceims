@@ -23,7 +23,11 @@ return new class extends Migration
             $table->string('facaulity');
             $table->string('classyear');
             $table->timestamps();
+
+            $table->unsignedBigInteger('proctor-id')->foriegn('proctor-id')->references('id')->on('proctors')->onDelete('cascade');
         });
+    
+      
     }
 
     /**

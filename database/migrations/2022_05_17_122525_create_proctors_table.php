@@ -19,11 +19,7 @@ return new class extends Migration
             $table->string('dorm_no');
             $table->string('dormitary_material');
             $table->timestamps();
-            $table->unsignedDBinteger(proctor-id);
-            $table->forgien(proctor-id);
-            $table->references('id');
-            $table->on('proctor');
-            $table->onDelete('cascade');
+           
         });
     }
 

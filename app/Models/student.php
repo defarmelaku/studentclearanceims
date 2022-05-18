@@ -18,7 +18,7 @@ class student extends Model
         'facaulity',
         'classyear'
         ];
-        public function proctor()
+        public function proctors()
         {
             return $this->belongsTo(proctor::class);
             
