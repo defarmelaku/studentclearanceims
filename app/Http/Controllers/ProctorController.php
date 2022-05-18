@@ -19,7 +19,7 @@ class ProctorController extends Controller
         $proctor->dormitary_material = $request->dormitary_material;
        $is_saved = $proctor->save();
       if($is_saved){
-      echo "DATA SAVED SUCCESSFULLY.";
+      echo "DATA REGISTER SUCCESSFULLY.";
                  }
       else{
        echo "Sorry, try again something went wrong.";
