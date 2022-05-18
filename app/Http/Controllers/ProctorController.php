@@ -14,12 +14,13 @@ class ProctorController extends Controller
       
       {
         $proctor =new proctor();
+        $proctor->id = $request->id;
         $proctor->block_no = $request->block_no;
         $proctor->dorm_no = $request->dorm_no;
         $proctor->dormitary_material = $request->dormitary_material;
        $is_saved = $proctor->save();
       if($is_saved){
-      echo "DATA REGISTER SUCCESSFULLY.";
+      echo "PROCTOR DATA REGISTER SUCCESSFULLY.";
                  }
       else{
        echo "Sorry, try again something went wrong.";
@@ -32,31 +33,31 @@ class ProctorController extends Controller
    $proctor = proctor::all();
    return view('proctor.list', compact('proctor'));
   }
-  public function edit($dorm_no)
+  public function edit($id)
    {
-   $proctor = proctor::find($dorm_no);
+   $proctor = proctor::find($id);
    return view('proctor.edit', compact('proctor'));
    }
    public function update(Request $request)
    {
-   //Valdorm_noate
-   $request->valdorm_noate(['name' => 'required' ]);
-    $proctor = proctor::find($request->dorm_no);
+   //Validate
+   $request->validate(['name' => 'required' ]);
+    $proctor = proctor::find($request->id);
     $proctor->block_no = $request->block_no;
         $proctor->dorm_no = $request->dorm_no;
         $proctor->dormitary_material = $request->dormitary_material;
     $proctor->save();
     return redirect('proctor/list');
     }
-    public function delete($dorm_no)
+    public function delete($id)
    {
-   proctor::where('dorm_no', $dorm_no)->delete();
+   proctor::where('id', $id)->delete();
    return redirect('proctor/list');
    }
   
-   public function get_by_dorm_no($dorm_no)
+   public function get_by_id($id)
    {
-    $proctor = proctor::where('dorm_no', $dorm_no)->first();
+    $proctor = proctor::where('id', $id)->first();
     return view('proctor.search', compact('proctor'));
     }
 }
