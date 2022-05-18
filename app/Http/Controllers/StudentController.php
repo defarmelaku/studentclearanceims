@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\student;
 use Illuminate\Http\Request;
 
 class StudentController extends Controller
@@ -24,7 +24,7 @@ class StudentController extends Controller
         $student->classyear = $request->classyear;
        $is_saved = $student->save();
       if($is_saved){
-      echo "DATA SAVED SUCCESSFULLY.";
+      echo "STUDENT DATA SAVED SUCCESSFULLY.";
                  }
       else{
        echo "Sorry, try again something went wrong.";

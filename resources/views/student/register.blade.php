@@ -24,7 +24,7 @@ name" autofocus>
  @csrf
  <div class="form-group row">
  <label for="Mname" class="col-md-4 col-formlabel text-md-right">{{ __('Mname') }}</label>
- <div class="col-md-6">uantity
+ <div class="col-md-6">
  <input id="Mname" type="text" class="formcontrol @error('Mname') isinvalid @enderror" name="Mname" value="{{ old('Mname') }}" required autocomplete
 ="Mname">
  @error('Mname')

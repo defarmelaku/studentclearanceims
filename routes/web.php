@@ -3,8 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Models\proctor;
 use App\Models\student;
-use App\Http\controllers\studentController;
-use App\Http\Controllers\proctorController;
+use App\Http\controllers\StudentController;
+use App\Http\Controllers\ProctorController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,14 +19,23 @@ use App\Http\Controllers\proctorController;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/student/register',[studentController::class,'register'])->name('student/register');
-Route::post('student.register',[studentController::class,'store'])->name('student/register');
-Route::get('/home', [App\Http\Controllers\HomeController ::class, 'index'])->name('home');
-Route::get('/student/list', [studentController::class, 'get_all'])->name('student/list');
-Route::get('/student/edit/{id}', [studentController::class, 'edit']);
-Route::post('/student/update',[studentController::class,'update'])->name('student/update');
-Route::get('/student/delete/{id}', [studentController::class, 'delete']);
-Route::get('/student/search/{id}', [studentController::class, 'get_by_id']);
-Auth::routes();
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//Auth::routes();
+Route::get('/student/register',[StudentController::class,'register'])->name('student/register');
+Route::post('student.register',[StudentController::class,'store'])->name('student/register');
+Route::get('/student/list', [StudentController::class, 'get_all'])->name('student/list');
+Route::get('/student/edit/{id}', [StudentController::class, 'edit']);
+Route::post('/student/update',[StudentController::class,'update'])->name('student/update');
+Route::get('/student/delete/{id}', [StudentController::class, 'delete']);
+Route::get('/student/search/{id}', [StudentController::class, 'get_by_id']);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/proctor/register',[ProctorController::class,'register'])->name('proctor/register');
+Route::post('proctor.register',[ProctorController::class,'store'])->name('proctor/register');
+Route::get('/proctor/list', [ProctorController::class, 'get_all'])->name('proctor/list');
+Route::get('/proctor/edit/{id}', [ProctorController::class, 'edit']);
+Route::post('/proctor/update',[ProctorController::class,'update'])->name('proctor/update');
+Route::get('/proctor/delete/{id}', [ProctorController::class, 'delete']);
+Route::get('/proctor/search/{id}', [ProctorController::class, 'get_by_id']);
+
+
