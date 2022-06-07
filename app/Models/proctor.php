@@ -11,6 +11,7 @@ class proctor  extends Model
     protected $fillable = [
         'id',
         'Block_no',
+       'materialid',
         'dorm_no',
         'dormitary_material',
         ];
