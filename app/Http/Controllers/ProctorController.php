@@ -14,6 +14,7 @@ class ProctorController extends Controller
       
       {
         $proctor =new proctor();
+         $proctor->materialid=$request->materialid;
         $proctor->id = $request->id;
         $proctor->block_no = $request->block_no;
         $proctor->dorm_no = $request->dorm_no;
@@ -46,6 +47,7 @@ class ProctorController extends Controller
     $proctor->block_no = $request->block_no;
         $proctor->dorm_no = $request->dorm_no;
         $proctor->dormitary_material = $request->dormitary_material;
+       $proctor->materialid=$request->materialid;
     $proctor->save();
     return redirect('proctor/list');
     }
