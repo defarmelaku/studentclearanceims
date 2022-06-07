@@ -18,7 +18,9 @@ return new class extends Migration
             $table->string('block_no');
             $table->string('dorm_no');
             $table->string('dormitary_material');
+            $table->string('materialid');
             $table->timestamps();
+            
            
         });
     }
