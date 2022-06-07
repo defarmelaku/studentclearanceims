@@ -25,7 +25,7 @@ block_no" autofocus>
  <div class="form-group row">
  <label for="dorm_no" class="col-md-4 col-formlabel text-md-right">{{ __('dorm_no') }}</label>
  <div class="col-md-6">
- <input id="dorm_no" type="text" class="formcontrol @error('unit') isinvalid @enderror" name="dorm_no" value="{{ old('dorm_no') }}" required autocomplete
+ <input id="dorm_no" type="text" class="formcontrol @error('dorm_no') isinvalid @enderror" name="dorm_no" value="{{ old('dorm_no') }}" required autocomplete
 ="dorm_no">
  @error('dorm_no')
  <span class="invalid-feedback" role="alert">
@@ -59,4 +59,19 @@ block_no" autofocus>
  </div>
  </div>
 </div>
+// @csrf
+ <div class="form-group row">
+ <label for="materialid" class="col-md-4 col-formlabel text-md-right">{{ __('materialid') }}</label>
+ <div class="col-md-6">
+ <input id="materialid" type="text" class="formcontrol @error('materialid') isinvalid @enderror" name="materialid" value="{{ old('materialid') }}" required autocomplete="
+materialid" autofocus>
+ @error('block_no')
+ <span class="invalid-feedback" role="alert">
+ <strong>{{ $message }}</strong>
+ </span>
+ @enderror
+ </div>
+ </div>
+ @csrf
+
 @endsection
